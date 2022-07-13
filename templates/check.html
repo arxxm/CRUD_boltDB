@@ -1,0 +1,44 @@
+{{ define "check" }}
+
+{{ template "header"}}
+
+
+
+    {{ range . }}
+        <p>{{ . }}</p>
+        <!-- <p>aaaa</p> -->
+        <!-- <a href="/cmd/delete-product-by-index/{{ .Id }}" class = "btn">Удалить</a> -->
+    {{ else }}
+        <p>пусто</p>
+    {{ end }}
+
+
+<!-- <div>
+    <table>
+        <thead>
+            <tr>
+                <th>Наименование</th>
+                <th></th>
+            </tr>
+        </thead>
+        <thead>
+            {{ range . }}
+                <tr>
+                    <td>{{ . }}</td>
+                    <td>
+                        <a href="/cmd/delete-product-by-index/{{ .Id }}" class = "btn">Удалить</a>
+                    </td>
+                </tr>
+            {{ else }}
+                <td>Список пуст</td>
+                <td></td> 
+            {{ end }}
+        </thead>
+    </table>
+</div> -->
+
+
+
+{{ template "footer"}}
+
+{{ end }}

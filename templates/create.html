@@ -1,0 +1,15 @@
+{{ define "create" }}
+
+{{ template "header"}}
+    <main role="main">
+        <form action="/cmd/add-product" method="post">
+            <input type="text" name="name" id="name" placeholder="Наименование" style="margin-top:1px;margin-bottom:6px;">
+            <input type="text" name="price" id="price" placeholder="Цена" style="margin-top:1px;margin-bottom:6px;">
+            <!-- <a href="/cmd/add-product" class="btn">Создать</a> -->
+            <button class="btn">Создать</button>
+            <a href="/products" class="btn">Отмена</a>
+        </form>
+    </main>
+{{ template "footer"}}
+
+{{ end }}

@@ -1,0 +1,2 @@
+https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=crud-data-table-for-database-with-modal-form
+https://codepen.io/skopekreep/pen/vEPwaX

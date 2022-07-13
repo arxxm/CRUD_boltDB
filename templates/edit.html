@@ -1,0 +1,40 @@
+{{ define "edit" }}
+
+{{ template "header"}}
+
+    <main role="main">
+        <form action="/cmd/edit-product/{{ .Id }}" method="post">
+            <input type="text" name="name" id="name" value="{{ .Name }}">
+            <input type="text" name="price" id="price" value="{{ .Price }}">
+            <!-- <input type="text" name="name" id="name" style="margin-top:1px;margin-bottom:6px;"><br> -->
+            <!-- <input type="text" name="price" id="price" style="margin-top:1px;margin-bottom:6px;">{{ .Price }}<br> -->
+            <!-- <a href="/cmd/add-product" class="btn">Создать</a> -->
+            <button class="btn">Сохранить</button>
+            <a href="/products" class = "btn">Отмена</a>
+        </form>
+    </main>
+
+    <!-- <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th>Цена</th>
+                    <th></th>
+                 </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <td><input type="text" name="Name" placeholder="Наименование" style="margin-top:1px;margin-bottom:6px;"></td>
+                    <td><input type="text" name="Price" placeholder="Цена" style="margin-top:1px;margin-bottom:6px;">{{ .Price }}</td>
+                    <td>
+
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </div> -->
+
+{{ template "footer"}}
+
+{{ end }}

@@ -1,0 +1,62 @@
+{{ define "found" }}
+
+{{ template "header"}}
+
+    <!-- <main role="main"> -->
+        <div>
+            <a href="/product/add" class="btn">Создать товар</a>
+        </div>
+        <form action="/q/product-search-by-name" method="post">
+            <input type="text" name="name" id="name" placeholder="Наименование" style="margin-top:1px;margin-bottom:6px;">
+            <button class="btn">Поиск</button>
+            <a href="/products" class = "btn">Отмена</a>
+        </form>
+    <!--<div>
+            {{ range . }}
+            <div>
+                <form action="/cmd/delete-product" method="post">
+                    <p name="name" id="name">{{ .Name }}</p>
+                    <p name="id" id="id">{{ .Id }}</p>
+                    <a href="/product/edit/{{ .Id }}" class="btn">Редактировать</a>
+                    <a href="/cmd/delete-product" class="btn">Удалить</a>
+                    <button class="btn">Удалить</button>
+                </form>
+            </div>
+            {{ else }}
+            <p>Список пуст</p>
+            {{ end }}
+        </div>
+    </main> -->
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Наименование</th>
+                <th></th>
+            </tr>
+        </thead>
+        <thead>
+            {{ range . }}
+            <tr>
+                <td>{{ .Name }}</td>
+                <td>
+                    <a href="/product/edit/{{ .Id }}" class = "btn">Редактировать</a>
+                    <a href="/cmd/delete-product/{{ .Id }}" class = "btn">Удалить</a>
+                </td>
+            </tr>
+            {{ else }}
+            <td>Ничего не найдено</td>
+            <td></td>
+            <td></td>
+            {{ end }}
+        </thead>
+    </table>
+</div>
+
+<!-- <a href="/cmd/delete-all" class = "btn">Удалить все</a>
+<a href="/check" class = "btn">check</a> -->
+
+{{ template "footer"}}
+
+{{ end }}
